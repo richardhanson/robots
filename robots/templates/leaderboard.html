@@ -1,0 +1,17 @@
+<nav>
+    <ul>
+        <li><a href="{{ game_url }}">Add Game Result</a></li>
+    </ul>
+</nav>
+<table>
+    <th>User</th>
+    <th>Wins</th>
+    <th>Most Recent Win</th>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.user }}</td>
+            <td>{{ user.wins }}</td>
+            <td>{{ user.recent }}</td>
+        </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,22 @@
+{% macro render_field(field) %}
+    {% if field.type != 'RadioField' %}
+        <dt>{{ field.label }}</dt>
+        <dd>{{ field(**kwargs) | safe }}
+        {% if field.errors %}
+            <ul class="errors">
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </dd>
+    {% else %}
+        {% for x in field.choices %}
+            <tr>
+                <td>{{ x }}</td>
+                <td>{{ x.label }}</td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+
+{% endmacro %}

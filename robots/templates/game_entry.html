@@ -1,0 +1,17 @@
+{% from "_formhelper.html" import render_field %}
+<nav>
+    <a href={{ leaderboard_url }}>Back to Leaderboard</a>
+</nav>
+
+<form method=post>
+    <dl>
+        {{ render_field(form.user) }}
+        {{ form.color }}
+        {{ render_field(form.pre_moved) }}
+        {{ render_field(form.symbol) }}
+        {{ render_field(form.other_colors_pre_moved) }}
+        {{ render_field(form.other_colors_moved) }}
+        {{ render_field(form.date) }}
+    </dl>
+    <p><input type="submit" value="Add Game"></p>
+</form>
