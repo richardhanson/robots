@@ -24,7 +24,6 @@ pipenv --rm
   }
   post {
     always{
-
       junit(testResults: 'log/pytest/results.xml', allowEmptyResults: true)
       cobertura(autoUpdateHealth: true, autoUpdateStability: true, zoomCoverageChart: true,
                 sourceEncoding: 'ASCII', coberturaReportFile: "coverage.xml")
